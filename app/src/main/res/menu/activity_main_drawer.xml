@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_rate"
+        android:icon="@drawable/ic_star"
+        android:title="Rate Us" />
+
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_suggestion"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Give Suggestion" />
+        </menu>
+    </item>
+
+    <item android:title="Other Apps">
+        <menu>
+            <item
+                android:id="@+id/nav_basicComputer"
+                android:title="Basic Computer" />
+
+            <item
+                android:id="@+id/nav_aptitude"
+                android:title="Aptitude Master" />
+            <item
+                android:id="@+id/nav_editorial"
+                android:title="Daily Editorial" />
+            <item
+                android:id="@+id/nav_pib"
+                android:title="PIB News" />
+            <item
+                android:id="@+id/nav_logical"
+                android:title="Logical Reasoning" />
+            <item
+                android:id="@+id/nav_personality"
+                android:title="Personality Development" />
+
+
+
+        </menu>
+    </item>
+</menu>
