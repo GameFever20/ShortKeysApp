@@ -16,8 +16,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
+import io.fabric.sdk.android.Fabric;
 import java.util.ArrayList;
 
 import utils.FireBaseHandler;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -278,10 +281,22 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.nav_basicComputer) {
 
             onBasicCOmputerClick();
+        }else if(id == R.id.nav_privacy_policy){
+            onPrivacyPolicyClick();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void onPrivacyPolicyClick() {
+        try {
+            String link = "http://aspirantworld.in/privacy-policy";
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void onLogicalReasoningClick() {
